@@ -6,7 +6,7 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 12:36:01 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/10 12:45:39 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/11 10:33:02 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
-	while (i < (int) sizeof(str))
+	while (str[i] != 0)
 	{
 		write(1, &str[i], 1);
 		i++;
