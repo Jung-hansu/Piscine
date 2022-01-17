@@ -6,7 +6,7 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 13:31:57 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/13 12:30:28 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/16 21:36:55 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	while (dest[i])
+	while (i < n)
 	{
 		dest[i] = 0;
 		i++;

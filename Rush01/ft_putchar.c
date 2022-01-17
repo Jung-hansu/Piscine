@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: yosong <yosong@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 11:44:01 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/16 21:37:38 by hanjung          ###   ########.fr       */
+/*   Created: 2022/01/16 16:19:07 by yosong            #+#    #+#             */
+/*   Updated: 2022/01/16 16:20:00 by yosong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strupcase(char *str)
+void	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] += 'A' - 'a';
-		i++;
-	}
-	return (str);
+	write(1, &c, 1);
 }

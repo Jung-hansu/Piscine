@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_get_flag.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: yosong <yosong@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 11:44:01 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/16 21:37:38 by hanjung          ###   ########.fr       */
+/*   Created: 2022/01/16 16:26:25 by yosong            #+#    #+#             */
+/*   Updated: 2022/01/16 16:26:39 by yosong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strupcase(char *str)
+int	get_flag(void)
 {
-	int	i;
+	static int	flag;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] += 'A' - 'a';
-		i++;
-	}
-	return (str);
+	flag++;
+	return (flag);
 }

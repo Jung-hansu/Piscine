@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   exception.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: junhelee <junhelee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 11:44:01 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/16 21:37:38 by hanjung          ###   ########.fr       */
+/*   Created: 2022/01/16 20:26:54 by junhelee          #+#    #+#             */
+/*   Updated: 2022/01/16 20:27:00 by junhelee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strupcase(char *str)
+void	print_error(void)
 {
-	int	i;
+	write(1, "Error\n", 6);
+}
 
-	i = 0;
-	while (str[i])
+int	exception(int *arr, int size)
+{
+	while (*arr)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] += 'A' - 'a';
-		i++;
+		if (!(*arr >= 1 && *arr <= size))
+			return (0);
+		arr++;
 	}
-	return (str);
+	return (1);
 }

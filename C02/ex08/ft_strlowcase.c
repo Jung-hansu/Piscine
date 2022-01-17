@@ -6,7 +6,7 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 11:53:09 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/13 11:55:45 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/16 21:37:58 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strlowcase(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i])
 	{

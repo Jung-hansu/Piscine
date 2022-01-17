@@ -6,23 +6,23 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 13:23:15 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/13 13:54:59 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/16 21:57:53 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	change_hex(char *arr, int i)
+char	change_hex(char c)
 {
-	char	c;
-
-	c = arr[i];							//마저 하기
+	if (c < 10)
+		return (c + '0');
+	return (c - 10 + 'a');
 }
-
 
 void	ft_putstr_non_printable(char *str)
 {
-	int	i;
+	int		i;
+	char	c;
 
 	i = 0;
 	while (str[i])
@@ -30,15 +30,13 @@ void	ft_putstr_non_printable(char *str)
 		if (!(str[i] >= 32 && str[i] <= 126))
 		{
 			write(1, "\\", 1);
-			change_hex(str, i);
+			c = change_hex(str[i] / 16);
+			write(1, &c, 1);
+			c = change_hex(str[i] % 16);
+			write(1, &c, 1);
 		}
-		write(1, &str[i], 1);
+		else
+			write(1, &str[i], 1);
 		i++;
 	}
-}
-
-int main(){
-	char arr[]="Coucou\ntu vas bien ?";
-	ft_putstr_non_printable(arr);
-	return 0;
 }
