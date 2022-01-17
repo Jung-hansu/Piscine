@@ -6,7 +6,7 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 13:23:15 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/16 21:57:53 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/17 10:50:17 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	ft_putstr_non_printable(char *str)
 		if (!(str[i] >= 32 && str[i] <= 126))
 		{
 			write(1, "\\", 1);
-			c = change_hex(str[i] / 16);
+			c = change_hex((str[i] + 256) % 256 / 16);
 			write(1, &c, 1);
-			c = change_hex(str[i] % 16);
+			c = change_hex((str[i] + 256) % 256 % 16);
 			write(1, &c, 1);
 		}
 		else
