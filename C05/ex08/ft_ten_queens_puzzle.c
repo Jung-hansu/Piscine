@@ -6,7 +6,7 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 09:14:33 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/22 09:57:47 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/22 20:14:26 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,4 @@ int	ft_ten_queens_puzzle(void)
 		map[i] = 0;
 	bt(map, 0, num_ways);
 	return (ways);
-}
-#include <stdio.h>
-int main(){
-	printf("%d",ft_ten_queens_puzzle());
-	return 0;
 }

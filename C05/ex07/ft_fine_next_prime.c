@@ -6,7 +6,7 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 09:09:28 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/20 09:12:44 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/22 19:20:42 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@ int	check_prime(int n)
 
 	divisor = 2;
 	while (divisor < n)
-	{
-		if (n % divisor == 0)
+		if (n % divisor++ == 0)
 			return (1);
-		divisor++;
-	}
 	return (0);
 }
 
