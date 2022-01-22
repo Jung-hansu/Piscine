@@ -6,7 +6,7 @@
 /*   By: junhelee <junhelee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 20:30:31 by junhelee          #+#    #+#             */
-/*   Updated: 2022/01/16 20:30:44 by junhelee         ###   ########.fr       */
+/*   Updated: 2022/01/19 12:26:58 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,9 @@ int	main(int argc, char **argv)
 		map[i] = 0;
 	view = change_int_arr(argv[1], view_size);
 	if (!check_error(view, view_size, size))
+	{
 		return (0);
+	}
 	if (exception(view, size))
 		bt(map, view, 0, size);
 	if (get_flag() == 1 || !exception(view, size))
