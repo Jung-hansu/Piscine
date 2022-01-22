@@ -6,7 +6,7 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:28:53 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/18 14:53:14 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/22 20:47:27 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_atoi(char *str)
 
 	i = 0;
 	sign = 1;
-	while ((str[i] >= 8 && str[i] <= 13) || str[i] == ' ')
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{

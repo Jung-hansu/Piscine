@@ -6,12 +6,12 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 11:58:40 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/22 16:22:20 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/22 20:47:52 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
+
 int	exception(char *base, int base_num)
 {
 	int	i;
