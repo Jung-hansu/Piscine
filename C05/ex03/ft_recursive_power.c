@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 13:31:57 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/17 10:56:13 by hanjung          ###   ########.fr       */
+/*   Created: 2022/01/19 09:23:30 by hanjung           #+#    #+#             */
+/*   Updated: 2022/01/20 12:51:30 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_recursive_power(int nb, int power)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (i < n && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = 0;
-		i++;
-	}
-	return (dest);
+	if (power == 0)
+		return (1);
+	if (power < 0)
+		return (0);
+	return (nb * ft_recursive_power(nb, power - 1));
 }

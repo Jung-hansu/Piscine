@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   exception.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: junhelee <junhelee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 13:31:57 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/17 10:56:13 by hanjung          ###   ########.fr       */
+/*   Created: 2022/01/16 20:26:54 by junhelee          #+#    #+#             */
+/*   Updated: 2022/01/19 10:13:01 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	print_error(void)
 {
-	unsigned int	i;
+	write(1, "Error\n", 6);
+}
 
-	i = 0;
-	while (i < n && src[i])
+int	exception(int *arr, int size)
+{
+	while (*arr)
 	{
-		dest[i] = src[i];
-		i++;
+		if (!(*arr >= 1 && *arr <= size))
+			return (0);
+		arr++;
 	}
-	while (i < n)
-	{
-		dest[i] = 0;
-		i++;
-	}
-	return (dest);
+	return (1);
 }

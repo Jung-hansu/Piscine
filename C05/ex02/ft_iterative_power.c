@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 13:31:57 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/17 10:56:13 by hanjung          ###   ########.fr       */
+/*   Created: 2022/01/19 09:22:01 by hanjung           #+#    #+#             */
+/*   Updated: 2022/01/20 12:51:03 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_iterative_power(int nb, int power)
 {
-	unsigned int	i;
+	int	result;
 
-	i = 0;
-	while (i < n && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = 0;
-		i++;
-	}
-	return (dest);
+	result = 1;
+	if (power < 0)
+		return (0);
+	while (power-- > 0)
+		result *= nb;
+	return (result);
 }

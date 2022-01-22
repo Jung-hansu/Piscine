@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 13:31:57 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/17 10:56:13 by hanjung          ###   ########.fr       */
+/*   Created: 2022/01/20 09:08:40 by hanjung           #+#    #+#             */
+/*   Updated: 2022/01/20 09:13:17 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_sqrt(int nb)
 {
-	unsigned int	i;
+	int	root;
+	int	result;
 
-	i = 0;
-	while (i < n && src[i])
+	root = 0;
+	result = 0;
+	while (root <= nb && nb >= 0)
 	{
-		dest[i] = src[i];
-		i++;
+		if (root * root == nb)
+		{
+			result = root;
+			break ;
+		}
+		root++;
 	}
-	while (i < n)
-	{
-		dest[i] = 0;
-		i++;
-	}
-	return (dest);
+	return (result);
 }

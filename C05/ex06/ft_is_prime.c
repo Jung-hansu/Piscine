@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 13:31:57 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/17 10:56:13 by hanjung          ###   ########.fr       */
+/*   Created: 2022/01/20 09:09:08 by hanjung           #+#    #+#             */
+/*   Updated: 2022/01/20 09:12:53 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_is_prime(int nb)
 {
-	unsigned int	i;
+	int	divisor;
 
-	i = 0;
-	while (i < n && src[i])
+	divisor = 2;
+	if (nb <= 1)
+		return (0);
+	if (nb == 2)
+		return (1);
+	while (divisor < nb)
 	{
-		dest[i] = src[i];
-		i++;
+		if (nb % divisor == 0)
+			return (0);
+		divisor++;
 	}
-	while (i < n)
-	{
-		dest[i] = 0;
-		i++;
-	}
-	return (dest);
+	return (1);
 }

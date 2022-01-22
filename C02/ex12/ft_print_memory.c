@@ -6,13 +6,10 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:59:36 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/16 21:38:27 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/19 10:23:11 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	*ft_print_memory(void *addr, unsigned int size)
 {
-	return (addr);
 }
