@@ -6,15 +6,15 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 09:14:33 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/22 20:14:26 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/22 20:20:15 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_queens(int* map)
+void	print_queens(int *map)
 {
-	int	i;
+	int		i;
 	char	n;
 
 	i = 0;
@@ -27,7 +27,7 @@ void	print_queens(int* map)
 	write(1, "\n", 1);
 }
 
-int	check_queens(int* map, int col_num)
+int	check_queens(int *map, int col_num)
 {
 	int	i;
 
@@ -44,7 +44,7 @@ int	check_queens(int* map, int col_num)
 	return (1);
 }
 
-void	bt(int* map, int col_num, int* num_ways)
+void	bt(int *map, int col_num, int *num_ways)
 {
 	int	queen;
 
@@ -72,7 +72,7 @@ int	ft_ten_queens_puzzle(void)
 	int	map[10];
 	int	i;
 	int	ways;
-	int*	num_ways;
+	int	*num_ways;
 
 	i = -1;
 	ways = 0;
