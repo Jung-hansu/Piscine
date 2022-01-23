@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_fine_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 09:18:56 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/23 11:16:06 by hanjung          ###   ########.fr       */
+/*   Created: 2022/01/20 09:09:28 by hanjung           #+#    #+#             */
+/*   Updated: 2022/01/23 13:03:24 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	check_prime(int n)
 {
-	int	i;
-	int	result;
+	int	divisor;
 
-	i = 0;
-	result = 1;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i++ < nb)
-		result *= i;
-	return (result);
+	divisor = 2;
+	while (divisor * divisor <= n && divisor * divisor > 0)
+		if (n % divisor++ == 0)
+			return (1);
+	return (0);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	if (nb <= 2)
+		return (2);
+	while (check_prime(nb))
+		nb++;
+	return (nb);
 }

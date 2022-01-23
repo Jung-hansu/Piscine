@@ -6,13 +6,13 @@
 /*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 09:21:10 by hanjung           #+#    #+#             */
-/*   Updated: 2022/01/19 09:21:38 by hanjung          ###   ########.fr       */
+/*   Updated: 2022/01/23 11:16:14 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_recursive_factorial(int nb)
 {
-	if (nb < 0 || nb > 12)
+	if (nb < 0)
 		return (0);
 	if (nb == 0 || nb == 1)
 		return (1);
