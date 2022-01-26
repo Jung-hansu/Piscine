@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   compare.c                                          :+:      :+:    :+:   */
+/*   is_valid1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsong <tsong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 19:26:44 by gicho             #+#    #+#             */
-/*   Updated: 2022/01/24 13:20:30 by tsong            ###   ########.fr       */
+/*   Created: 2022/01/25 21:47:19 by tsong             #+#    #+#             */
+/*   Updated: 2022/01/25 21:50:20 by tsong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int			ft_min(int a, int b, int c)
+int	is_printable(char c)
 {
-	int		min;
-
-	min = a;
-	if (min > b)
-		min = b;
-	if (min > c)
-		min = c;
-	return (min);
+	if (32 < c && c <= 126)
+		return (1);
+	return (0);
 }
 
-int			cmp(int a, int b)
+int	is_dupl(char a, char b, char c)
 {
-	if (a < b)
+	if (a == b || b == c || c == a)
 		return (1);
 	return (0);
 }

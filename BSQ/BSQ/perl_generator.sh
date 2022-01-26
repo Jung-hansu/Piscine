@@ -13,3 +13,5 @@ else {
 print "."; }
 }
 print "\n"; }
+# perl perl_generator.sh 10 10 1 > map10x10
+# ./BSQ map10x10

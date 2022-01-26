@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_util.c                                        :+:      :+:    :+:   */
+/*   read1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsong <tsong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 19:27:06 by gicho             #+#    #+#             */
-/*   Updated: 2022/01/24 13:24:09 by tsong            ###   ########.fr       */
+/*   Created: 2022/01/25 21:49:03 by tsong             #+#    #+#             */
+/*   Updated: 2022/01/25 21:50:14 by tsong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 char	*expand_size(char *src, int *size)
 {
-	char *ret;
+	char	*ret;
 
-	if (!(ret = (char*)malloc(*size << 1)))
+	ret = (char *)malloc(*size << 1);
+	if (!ret)
 		exit(0);
 	ft_strncpy(ret, src, *size);
 	*size <<= 1;
@@ -24,36 +25,32 @@ char	*expand_size(char *src, int *size)
 	return (ret);
 }
 
-int		ft_is_number(char c)
+int	ft_atoi(char *str)
 {
-	return ('0' <= c && c <= '9');
-}
-
-int		ft_atoi(char *str)
-{
-	int num;
+	int	num;
+	int	i;
 
 	if (*str == '0')
 		return (0);
 	num = 0;
-	while (*str)
+	i = 0;
+	while (str[i])
 	{
-		if (!ft_is_number(*str))
+		if (!('0' <= str[i] && str[i] <= '9'))
 			return (0);
-		num *= 10;
-		num += (*str - '0');
-		++str;
+		num = num * 10 + str[i] - '0';
+		i++;
 	}
 	return (num);
 }
 
-int		ft_is_valid_map(char *line, t_map *map)
+int	ft_is_valid_map(char *line, t_map *map)
 {
 	while (*line)
 	{
 		if (*line != map->empty && *line != map->obstacle)
 			return (0);
-		++line;
+		line++;
 	}
 	return (1);
 }
