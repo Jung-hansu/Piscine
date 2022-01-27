@@ -1,81 +1,76 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woojlee <woojlee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 15:53:37 by woojlee           #+#    #+#             */
-/*   Updated: 2022/01/22 12:22:33 by woojlee          ###   ########.fr       */
+/*   Created: 2022/01/26 09:25:57 by hanjung           #+#    #+#             */
+/*   Updated: 2022/01/27 11:20:16 by hanjung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_include_check(char c, char *charset)
+int	check_sep(char c, char *charset)
 {
-	int	i;
-
-	i = 0;
-	while (charset[i])
+	while (*charset)
 	{
-		if (c == charset[i])
+		if (c == *charset)
 			return (1);
-		i ++;
+		charset++;
 	}
 	return (0);
 }
 
-int	ft_string_cnt(char *str, char *charset)
+int	get_size(char *str, char *charset)
 {
-	int	cnt;
+	int	size;
 
-	cnt = 0;
+	size = 0;
 	while (*str)
 	{
-		if (!ft_include_check(*str, charset))
+		if (!check_sep(*str, charset))
 		{
-			cnt++;
-			while (*str && !ft_include_check(*str, charset))
+			size++;
+			while (*str && !check_sep(*str, charset))
 				str++;
 		}
 		str++;
 	}
-	return (cnt);
+	return (size);
 }
 
-void	ft_cpy(char *from, char *result, char *to)
+void	ft_strcpy(char *dest, char *start, char *fin)
 {
-	while (from < to)
-		*(result++) = *(from++);
-	*result = '\0';
+	while (start < fin)
+		*(dest++) = *(start++);
+	*dest = 0;
 }
 
 char	**ft_split(char *str, char *charset)
 {
+	int		size;
+	int		i;
 	char	**result;
-	char	*from;
-	int		s_idx;
+	char	*temp;
 
-	s_idx = 0;
-	result = (char **)malloc(sizeof(char *) * ft_string_cnt(str, charset) + 1);
-	if (result == NULL)
-		return (NULL);
+	i = 0;
+	size = get_size(str, charset);
+	result = (char **)malloc(sizeof(char *) * (size + 1));
 	while (*str)
 	{
-		if (!ft_include_check(*str, charset))
+		if (!check_sep(*str, charset))
 		{
-			from = str;
-			while (*str && !ft_include_check(*str, charset))
+			temp = str;
+			while (*str && !check_sep(*str, charset))
 				str++;
-			result[s_idx] = (char *)malloc(sizeof(char) * (str - from + 1));
-			if (result[s_idx] == NULL)
-				return (NULL);
-			ft_cpy(from, result[s_idx], str);
-			s_idx++;
+			result[i] = (char *)malloc(sizeof(char) * (str - temp + 1));
+			ft_strcpy(result[i], temp, str);
+			i++;
 		}
 		str++;
 	}
-	result[s_idx] = 0;
+	result[i] = 0;
 	return (result);
 }
