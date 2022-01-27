@@ -6,7 +6,7 @@
 #    By: hanjung <hanjung@student.42seoul.k>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 09:25:25 by hanjung           #+#    #+#              #
-#    Updated: 2022/01/26 09:25:30 by hanjung          ###   ########.fr        #
+#    Updated: 2022/01/27 11:20:58 by hanjung          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,22 +16,22 @@ CFLAGS = -Wall -Wextra -Werror -c
 SRCDIR = srcs
 INCDIR = includes
 
-TARGET = libft.a
+NAME = libft.a
 SOURCES = $(SRCDIR)/ft_putchar.c $(SRCDIR)/ft_swap.c $(SRCDIR)/ft_putstr.c $(SRCDIR)/ft_strlen.c $(SRCDIR)/ft_strcmp.c
 OBJECTS = $(SOURCES:.c=.o)
 
-all: $(TARGET)
+all: $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $< -o $@ -I $(INCDIR)
 	
-$(TARGET): $(OBJECTS)
+$(NAME): $(OBJECTS)
 	ar cr $@ $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS)
 
 fclean: clean
-	rm -f $(TARGET)
+	rm -f $(NAME)
 
 re: fclean all
